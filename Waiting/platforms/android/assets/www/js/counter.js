@@ -26,6 +26,10 @@ $( document ).ready(function() {
 	$(".setPeople").click (function () {
 		peopleWaiting = $(".currentPeople").val();
 		console.log("People Waiting: " + peopleWaiting);
+		$(".set-info-panel").addClass('hide');
+		$('.people-waiting span').text("Gente por delante: " + peopleWaiting);
+		$('.people-waiting').removeClass('hide');
+		showCurrentTime(".currentTime");
 
 		document.timeA = moment();
 	});
@@ -37,7 +41,8 @@ $( document ).ready(function() {
 		//Reduce People Waiting by 1
 		document.peopleWaiting = peopleWaiting--;
 		//Update People Waiting value on user form
-		$(".currentPeople").val(peopleWaiting);
+
+		$('.people-waiting span').text("Gente por delante: " + peopleWaiting);
 		console.log (peopleWaiting);
 
 		//Get current time
@@ -69,7 +74,8 @@ $( document ).ready(function() {
 
 		console.log("Average: " + moment().seconds(averageTime));
 		//Send time to User
-		$(".average-value").text(averageTime + " segundos.")
+		$(".average-value span").text("El tiempo de atencion promedio es de " + averageTime + " segundos.");
+		$(".average-value").removeClass('hide');
 
 
 		//Calculate When the user will be called
@@ -79,13 +85,27 @@ $( document ).ready(function() {
 		var finalTime = moment().add(howLong, 's');
 		console.log ("Final: " + moment(finalTime).format("HH:mm:ss"));
 		//Send estimated time to user
-		$(".estimated-time").text(moment(finalTime).format("HH:mm:ss"));
-
-
-		//Remove hide class to show generated info
-		$(".generated-info.hide").removeClass("hide");
+		$(".estimated-time span").text("La hora estimada de atencion son las " + moment(finalTime).format("HH:mm:ss"));
+		$(".estimated-time").removeClass('hide');
 
 		showCurrentTime(".currentTime");
+	});
+
+	$(".reset-btn").click (function () {
+
+		peopleWaiting = 0;
+		averageTime = 0;
+		peopleGone = 0;
+		timeSum = 0;
+		console.log("People Waiting: " + peopleWaiting);
+		$(".set-info-panel").removeClass('hide');
+		$('.people-waiting').addClass('hide');
+		$(".average-value").addClass('hide');
+		$(".estimated-time").addClass('hide');
+
+		showCurrentTime(".currentTime");
+
+
 	});
 
 showCurrentTime(".currentTime");

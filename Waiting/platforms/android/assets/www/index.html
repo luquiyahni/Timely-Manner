@@ -10,26 +10,36 @@
             <h1>Timely Manner</h1>
         </div>
         <div class="current-info">
-            <div>
+            <div class="set-info-panel">
                 <span>Gente en la fila: </span>
-                <input type="number" name="people" class="currentPeople" value="0"></br>
-                <input class="setPeople" type="button" name="setPeople" value="SET!"></br>
+                <input type="number" name="people" class="currentPeople" value="0">
+                <input class="setPeople" type="button" name="setPeople" value="SET!">
             </div>
+            <hr>
             <div>
                 <span>Hora Actual: </span>
                 <span class="currentTime"></span>
             </div>
         </div>
+        <hr>
         <div>
+            <h3>Tocá el siguiente botón cada vez que alguien sea llamado</h3>
             <input class="next" type="button" name="called" value="NEXT!">
         </div>
-        <div class="generated-info hide">
-            <div>
-                <span>El tiempo de atencion promedio es de </span><span class="average-value"></span></br>
+        <div class="generated-info">
+            <div class="people-waiting hide">
+                <span></span>
             </div>
-            <div>
-                <span>La hora estimada de atencion son las </span><span class="estimated-time"></span>
+            <div class="average-value hide">
+                <span></span>
             </div>
+            <div class="estimated-time hide">
+                <span></span>
+            </div>
+        </div>
+        <hr>
+        <div class="reset">
+            <input class="reset-btn" type="button" name="reset" value="Reset">
         </div>
     <script src="js/moment.js" type="text/javascript"></script>
     <script src="js/jquery-3.2.1.min.js"></script>
