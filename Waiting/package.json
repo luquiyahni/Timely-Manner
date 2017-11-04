@@ -1,0 +1,13 @@
+{
+  "name": "com.scrule.waiting",
+  "version": "1.0.0",
+  "displayName": "Waiting",
+  "cordova": {
+    "platforms": [
+      "android"
+    ]
+  },
+  "dependencies": {
+    "cordova-android": "~6.2.3"
+  }
+}
